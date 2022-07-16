@@ -7,7 +7,7 @@ import { UserContext } from '../UserContext';
 
 const Header = () => {
 
-  const { user } = React.useContext(UserContext);
+  const { user, userLogout } = React.useContext(UserContext);
 
   console.log(user)
 
@@ -16,6 +16,7 @@ const Header = () => {
       <nav className={`${styles.nav} container`}>
         <Link className={styles.logo} to="/" aria-label='Dogs - Home'><Dogs /></Link>
         <Link className={styles.login} to={user ? '/conta' : '/login'}>{user ? user.username : 'Login / Criar'}</Link>
+        {user && <button onClick={userLogout}>Sair</button>}
       </nav>
     </header>
   )

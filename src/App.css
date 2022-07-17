@@ -79,7 +79,7 @@ button, input {
   padding: 0.725rem;
   border-radius: 5px;
   box-shadow: 0 0 0 1px #FAD4D4, 0 0 0 3px #990000;
-  margin: 1rem 2rem;
+  margin: 1rem 0;
 }
 
 @keyframes animeLeft {

@@ -5,6 +5,7 @@ import Button from '../Forms/Button';
 import Input from '../Forms/Input';
 import Error from '../../Helper/Error';
 import { UserContext } from '../../UserContext';
+import useFetch from '../../Hooks/useFetch';
 
 const LoginCreate = () => {
 
@@ -13,6 +14,7 @@ const LoginCreate = () => {
   const password = useForm('');
 
   const {userLogin} = React.useContext(UserContext)
+  const {loading, error, request} = useFetch();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -23,8 +25,7 @@ const LoginCreate = () => {
       password: password.value
     });
 
-    const resp = await fetch(url, options);
-    const json = await resp.json();
+    const { resp } = await request(url, options);
 
     if(resp.ok) userLogin(username.value, password.value)
   }
@@ -33,6 +34,7 @@ const LoginCreate = () => {
   return (
     <section className="animeLeft">
       <h1 className='title'>Cadastre-se</h1>
+      {error && <Error error={error} />}
       <form onSubmit={handleSubmit}>
         <Input 
         label="Username" 
@@ -52,7 +54,7 @@ const LoginCreate = () => {
         name="password" 
         {...password}
         />
-        <Button>Cadastrar</Button>
+        {loading ? <Button disabled>Autenticando...</Button> : <Button>Cadastrar</Button>}
       </form>
     </section>
   )

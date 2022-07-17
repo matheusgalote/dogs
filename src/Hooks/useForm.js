@@ -8,6 +8,10 @@ const types = {
   password: {
     regex: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
     message: 'Você é fraco, lhe falta ódio! A senha deve ter mais de 8 digitos.'
+  },
+  number: {
+    regex: /^\d+$/,
+    message: 'Precisa ser número!'
   }
 }
 

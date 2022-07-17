@@ -6,7 +6,7 @@ import Loading from '../../Helper/Loading';
 import { PHOTOS_GET } from '../../api';
 import styles from './FeedPhotos.module.css'
 
-const FeedPhotos = () => {
+const FeedPhotos = ( {setModalPhoto} ) => {
 
   const { data, loading, error, request } = useFetch();
 
@@ -17,8 +17,6 @@ const FeedPhotos = () => {
 
     const fetchPhotos = async () => {
       const { resp, json } = await request(url, options);
-
-      console.log(json)
     }
 
     fetchPhotos()
@@ -32,7 +30,7 @@ const FeedPhotos = () => {
     return (
       <ul className={styles.feed}>
         {
-          data.map(photo => <FeedPhotosItem key={photo.id} photo={photo} />)
+          data.map(photo => <FeedPhotosItem key={photo.id} photo={photo} setModalPhoto={setModalPhoto} />)
         }
       </ul>
     );

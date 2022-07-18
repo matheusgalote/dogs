@@ -11,7 +11,7 @@ export function TOKEN_POST(body) {
       body: JSON.stringify(body),
     }
   }
-} 
+}
 
 export function TOKEN_VALIDATE_POST(token) {
   return {
@@ -63,7 +63,7 @@ export function PHOTO_POST(token, formData) {
   }
 }
 
-export function PHOTOS_GET({page, total, user}) {
+export function PHOTOS_GET({ page, total, user }) {
   return {
     url: API_URL + `/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
@@ -81,5 +81,19 @@ export function PHOTO_GET(id) {
       method: 'GET',
       caches: 'no-store'
     }
+  }
+}
+
+export function COMMENT_POST(id, token, body) {
+  return {
+    url: API_URL + `/api/comment/${id}`,
+    options: {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    },
   }
 }

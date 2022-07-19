@@ -10,10 +10,9 @@ const FeedPhotos = ( {setModalPhoto} ) => {
 
   const { data, loading, error, request } = useFetch();
 
-
   React.useEffect(() => {
 
-    const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 9062 })
+    const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 })
 
     const fetchPhotos = async () => {
       const { resp, json } = await request(url, options);

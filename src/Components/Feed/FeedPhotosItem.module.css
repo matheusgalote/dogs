@@ -10,7 +10,7 @@
   }
 }
 
-.photo {
+.photo  {
   display: grid;
   border-radius: .2rem;
   overflow: hidden;
@@ -18,7 +18,7 @@
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.photo img {
+.photo > div {
   grid-area: 1/1;
 }
 

@@ -47,6 +47,10 @@
   animation: latir .6 infinite;
 }
 
+.form.single {
+  margin: 1rem 0;
+}
+
 
 @keyframes latir {
   from {

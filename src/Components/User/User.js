@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import NotFound from '../../NotFound'
 import { UserContext } from '../../UserContext'
 import Feed from '../Feed/Feed'
 import UserHeader from './UserHeader'
@@ -17,6 +18,7 @@ const User = () => {
         <Route path='/' element={<Feed user={user && user.id} />} />
         <Route path='postar' element={<UserPhotoPost />} />
         <Route path='estastisticas' element={<UserStats />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </section>
   )

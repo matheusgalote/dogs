@@ -5,6 +5,7 @@ import useFetch from '../../Hooks/useFetch';
 import Error from '../../Helper/Error';
 import Loading from '../../Helper/Loading';
 import PhotoContent from './PhotoContent';
+import Head from '../../Helper/Head';
 
 const Photo = () => {
 

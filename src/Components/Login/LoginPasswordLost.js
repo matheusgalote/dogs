@@ -24,7 +24,7 @@ const LoginPasswordLost = () => {
 
   if(data) return <p>Email Enviado!</p>
   return (
-    <section>
+    <section className='animeLeft'>
       <h1 className='title'>Perdeu senha?</h1>
       <Error error={error} />
       <form onSubmit={handleSubmit}>

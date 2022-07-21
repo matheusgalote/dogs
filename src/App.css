@@ -104,3 +104,8 @@ button, input {
   flex: 1;
 }
 
+.VictoryContainer {
+  height: initial !important;
+  margin: 0 auto;
+}
+
